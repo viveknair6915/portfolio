@@ -13,7 +13,7 @@ import React, { useState, useEffect } from "react";
 const App = () => {
   const [loading, setLoading] = useState(true);
   useEffect(() => {
-    const timer = setTimeout(() => setLoading(false), 3000);
+    const timer = setTimeout(() => setLoading(false), 2000);
     return () => clearTimeout(timer);
   }, []);
 
@@ -21,7 +21,7 @@ const App = () => {
     return (
       <>
         {/* Aurora Particles Background */}
-        <ParticlesBackground numParticles={38} colorPalette={["#ffb86c","#ff79c6","#8be9fd","#50fa7b","#bd93f9"]} particleSize={[3,8]} speed={0.13} />
+        <ParticlesBackground numParticles={12} colorPalette={["#ffb86c","#ff79c6","#8be9fd","#50fa7b","#bd93f9"]} particleSize={[2,4]} speed={0.13} />
         <div className="fixed inset-0 z-50 flex items-center justify-center overflow-hidden">
           {/* Glassmorphic Card with Aurora Glow */}
           <div

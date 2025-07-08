@@ -9,7 +9,7 @@ const auroraPalette = [
   'rgba(255,89,198,0.36)',  // pink
 ];
 
-const ParticlesBackground = ({ numParticles = 48, colorPalette = auroraPalette, particleSize = [2.5, 6], speed = 0.18 }) => {
+const ParticlesBackground = ({ numParticles = 12, colorPalette = auroraPalette, particleSize = [1.5, 3], speed = 0.13 }) => {
   const canvasRef = useRef(null);
 
   useEffect(() => {
@@ -75,6 +75,7 @@ const ParticlesBackground = ({ numParticles = 48, colorPalette = auroraPalette, 
         height: "100vh",
         zIndex: 0,
         pointerEvents: "none",
+        willChange: "transform"
       }}
     />
   );

@@ -21,7 +21,7 @@ const Hero = () => {
   useEffect(() => {
     const onScroll = () => {
       setShowScroll(window.scrollY < 10);
-      setParallaxOffset(window.scrollY * 0.25); // Adjust multiplier for more/less effect
+      setParallaxOffset(window.scrollY * 0.12); // Even less intensive parallax for smoothness
     };
     window.addEventListener('scroll', onScroll);
     return () => window.removeEventListener('scroll', onScroll);
@@ -30,27 +30,23 @@ const Hero = () => {
   useEffect(() => {
     let i = 0;
     let direction = 1; // 1: typing, -1: erasing
-    let timeoutId;
-    const typewriter = () => {
+    const interval = setInterval(() => {
       setVivekText(vivekFull.slice(0, i));
       if (direction === 1) {
         if (i < vivekFull.length) {
           i++;
-          timeoutId = setTimeout(typewriter, 160);
         } else {
           direction = -1;
-          timeoutId = setTimeout(typewriter, 900); // pause at full word
         }
       } else {
         if (i > 0) {
           i--;
-          timeoutId = setTimeout(typewriter, 90);
         } else {
           direction = 1;
-          timeoutId = setTimeout(typewriter, 600); // pause at empty
         }
       }
-    };
+    }, 135);
+    return () => clearInterval(interval);
     typewriter();
     return () => clearTimeout(timeoutId);
   }, []);
@@ -69,7 +65,8 @@ const Hero = () => {
         style={{
           backgroundImage: "url('/bg.gif')",
           transform: `translateY(${parallaxOffset}px)`,
-          transition: 'transform 0.1s cubic-bezier(.4,1.4,.6,1)'
+          transition: 'transform 0.13s cubic-bezier(.4,1.4,.6,1)',
+          willChange: 'transform'
         }}
       />
       {/* Aurora-like animated particles background */}
@@ -111,16 +108,16 @@ const Hero = () => {
       <div className="absolute bottom-0 left-0 w-full h-[40%] z-20 bg-gradient-to-t from-black/80 via-black/30 to-transparent pointer-events-none" />
 
       {/* Centered text over image with animated effects */}
-      <div className="relative z-30 w-full flex flex-col items-center sm:items-start justify-start text-center sm:text-left px-4 sm:pl-16 md:pl-24 lg:pl-32 h-full pt-20 sm:pt-32 md:pt-36">
+      <div className="relative z-30 w-full flex flex-col items-center sm:items-start justify-start text-center sm:text-left px-2 xs:px-4 sm:pl-8 md:pl-16 lg:pl-32 h-full pt-14 xs:pt-20 sm:pt-32 md:pt-36 min-h-[320px] max-w-[100vw]">
         <motion.h1
-          className="text-4xl sm:text-5xl md:text-6xl font-extrabold mb-4 animate-gradient"
-          style={{textShadow: '0 4px 32px #ff990088, 0 1.5px 6px #ffb86c99'}}
+          className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold mb-3 sm:mb-4 animate-gradient min-w-[180px] max-w-full"
+          style={{textShadow: '0 2px 12px #ff990055, 0 1px 4px #ffb86c77'}}
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, type: 'spring', stiffness: 60 }}
         >
           <span className="animated-gradient-text animate-gradient bg-gradient-to-r from-[#ffb86c] via-[#ff9900] to-[#ff5e13] bg-clip-text text-transparent">Hi, I'm </span>
-          <span className="inline-block font-extrabold text-[#ff9900]" style={{textShadow: '0 2px 16px #ff990099'}}>
+          <span className="inline-block font-extrabold text-[#ff9900]" style={{textShadow: '0 1.5px 6px #ffb86c99'}}>
             <span>{vivekText}</span>
             <span className="inline-block w-2 h-7 align-middle bg-[#ff9900] animate-blink ml-1" style={{verticalAlign: 'middle'}}></span>
           </span>

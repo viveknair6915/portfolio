@@ -1,11 +1,11 @@
 import React from "react";
 
 const PortfolioContent = () => (
-  <section className="max-w-4xl mx-auto px-4 py-12 text-gray-100">
+  <section className="w-full max-w-4xl mx-auto px-2 xs:px-4 sm:px-8 py-8 xs:py-12 text-gray-100">
     {/* Header */}
     <header className="mb-8">
-      <h1 className="text-4xl font-bold mb-2">Vivek V. Nair</h1>
-      <h2 className="text-xl font-semibold mb-1">Full‑Stack Developer & Machine Learning Enthusiast</h2>
+      <h1 className="text-2xl xs:text-3xl sm:text-4xl font-bold mb-2">Vivek V. Nair</h1>
+      <h2 className="text-base xs:text-lg sm:text-xl font-semibold mb-1">Full‑Stack Developer & Machine Learning Enthusiast</h2>
       <p className="text-gray-300 italic">Building scalable web apps by day, training parallelized chess engines by night.</p>
     </header>
 

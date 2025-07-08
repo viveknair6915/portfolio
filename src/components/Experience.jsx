@@ -63,12 +63,12 @@ const Experience = () => {
         <p className={`${styles.sectionSubText} text-center`}>
           What I have done so far
         </p>
-        <h2 className={`${styles.sectionHeadText} text-center`}>
+        <h2 className={`${styles.sectionHeadText} text-center text-2xl xs:text-3xl sm:text-4xl md:text-5xl`}>
           Work Experience.
         </h2>
       </motion.div>
 
-      <div className='mt-20 flex flex-col'>
+      <div className='mt-10 xs:mt-14 sm:mt-20 flex flex-col w-full max-w-full px-2 xs:px-4 sm:px-8'>
         <VerticalTimeline>
           {experiences.map((experience, index) => (
             <ExperienceCard
