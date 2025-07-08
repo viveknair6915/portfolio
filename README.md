@@ -1,8 +1,89 @@
 <div align="center">
-  <br />
-    <a href="https://youtu.be/0fYi8SGA20k?feature=shared" target="_blank">
-      <img src="https://github.com/adrianhajdin/project_3D_developer_portfolio/assets/151519281/4722160a-8e61-403f-a905-728feae1f7e6" alt="Project Banner">
-    </a>
+  <img src="YOUR_BANNER_IMAGE_URL" alt="Aurora 3D Portfolio Banner" style="max-width: 100%; border-radius: 16px;" />
+  <h1>Vivek Nair's 3D Aurora Developer Portfolio</h1>
+  <p>
+    <b>🚀 A visually stunning, interactive portfolio built with React, Three.js, and a custom aurora-inspired design.</b>
+  </p>
+  <p>
+    <a href="YOUR_LIVE_LINK"><img src="https://img.shields.io/badge/Live-Demo-brightgreen?style=for-the-badge" /></a>
+    <a href="mailto:viveknair6915@gmail.com"><img src="https://img.shields.io/badge/Contact-Email-blue?style=for-the-badge" /></a>
+    <a href="https://www.linkedin.com/in/vivek-nair-5073b2251/"><img src="https://img.shields.io/badge/LinkedIn-Connect-blueviolet?style=for-the-badge" /></a>
+  </p>
+</div>
+
+---
+
+## 🌌 About
+
+Hi! I'm **Vivek Nair** — a full-stack developer and ML enthusiast. This portfolio showcases my projects, skills, and passion for building robust web apps and creative 3D experiences.
+
+---
+
+## 🎆 Features
+
+- **Aurora-inspired animated loader** with glowing particles, neon spinner, and animated steps
+- **Animated gradient text** and glassmorphic UI
+- **Responsive design** for all devices
+- **Contact form** with EmailJS integration
+- **Smooth animations** powered by Framer Motion
+- **Accessible** and keyboard-friendly
+
+---
+
+## 🛠️ Tech Stack
+
+- **Frontend:** React, Vite, Tailwind CSS, Framer Motion
+- **3D Graphics:** Three.js, React Three Fiber, Drei
+- **Email:** EmailJS
+- **Deployment:** Vercel
+
+---
+
+## 🚀 Live Demo
+
+👉 [View Portfolio Live](YOUR_LIVE_LINK)
+
+---
+
+## 🏁 Getting Started
+
+Clone and run locally:
+
+```bash
+git clone https://github.com/viveknair6915/portfolio.git
+cd portfolio
+npm install
+npm run dev
+```
+
+---
+
+## 📁 Folder Structure
+
+- `/src/components` — All React UI components (Hero, Loader, StepLine, etc)
+- `/src/assets` — Images, 3D models, icons
+- `/src/constants` — Data/constants for sections
+- `/src/styles` — Custom styles and Tailwind config
+
+---
+
+## 🖼️ Screenshots
+
+![Aurora Loader](YOUR_SCREENSHOT_URL)
+![3D Hero Section](YOUR_SCREENSHOT_URL_2)
+
+---
+
+## 📬 Contact
+
+- **Email:** viveknair6915@gmail.com
+- **LinkedIn:** [Vivek Nair](https://www.linkedin.com/in/vivek-nair-5073b2251/)
+
+---
+
+> _“I craft robust web applications by day and train parallelized chess engines by night — always eager to solve real-world challenges with code.”_
+
+---
   <br />
 
   <div>
@@ -12,10 +93,6 @@
   </div>
 
   <h3 align="center">A 3D Developer Portfolio</h3>
-
-   <div align="center">
-     Build this project step by step with our detailed tutorial on <a href="https://www.youtube.com/@javascriptmastery/videos" target="_blank"><b>JavaScript Mastery</b></a> YouTube. Join the JSM family!
-    </div>
 </div>
 
 ## 📋 <a name="table">Table of Contents</a>
@@ -26,15 +103,6 @@
 4. 🤸 [Quick Start](#quick-start)
 5. 🕸️ [Snippets](#snippets)
 6. 🔗 [Links](#links)
-7. 🚀 [More](#more)
-
-## 🚨 Tutorial
-
-This repository contains the code corresponding to an in-depth tutorial available on our YouTube channel, <a href="https://www.youtube.com/@javascriptmastery/videos" target="_blank"><b>JavaScript Mastery</b></a>. 
-
-If you prefer visual learning, this is the perfect resource for you. Follow our tutorial to learn how to build projects like these step-by-step in a beginner-friendly manner!
-
-<a href="https://youtu.be/0fYi8SGA20k?feature=shared" target="_blank"><img src="https://github.com/sujatagunale/EasyRead/assets/151519281/1736fca5-a031-4854-8c09-bc110e3bc16d" /></a>
 
 ## <a name="introduction">🤖 Introduction</a>
 
@@ -59,8 +127,6 @@ If you're getting started and need assistance or face any bugs, join our active 
 👉 **Customizable 3D Hero Section**: Includes a 3D desktop model easily customizable to suit specific needs.
 
 👉 **Interactive Experience and Work Sections**: Utilizes animations powered by framer motion for engaging user experience.
-
-👉 **3D Skills Section**: Showcases skills using 3D geometries through three.js and React Three fiber
 
 👉 **Animated Projects and Testimonials**: Features animated sections using framer motion for projects and client testimonials.
 
@@ -89,8 +155,8 @@ Make sure you have the following installed on your machine:
 **Cloning the Repository**
 
 ```bash
-git clone git@github.com:adrianhajdin/project_3D_developer_portfolio.git
-cd project_3D_developer_portfolio
+git clone https://github.com/viveknair6915/portfolio.git
+cd portfolio
 ```
 
 # Vivek V. Nair
@@ -837,17 +903,3 @@ module.exports = {
 ```
 
 </details>
-
-## <a name="links">🔗 Links</a>
-
-Models and Assets used in the project can be found [here](https://drive.google.com/drive/folders/1KVU8iaH0E_JFtShNiR3BgCSA3pawXY4Z)
-
-## <a name="more">🚀 More</a>
-
-**Advance your skills with Next.js Pro Course**
-
-Enjoyed creating this project? Dive deeper into our PRO courses for a richer learning experience. They're packed with detailed explanations, cool features, and exercises to boost your skills. Give it a go!
-
-<a href="https://www.jsmastery.pro/ultimate-next-course" target="_blank">
-<img src="https://i.ibb.co/804sPK6/Image-720.png" alt="Project Banner">
-</a>
