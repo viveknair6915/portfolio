@@ -67,7 +67,7 @@ const Hero = () => {
       <div
         className="absolute inset-0 w-full h-full bg-cover bg-center z-0"
         style={{
-          backgroundImage: "url('/herobg.png')",
+          backgroundImage: "url('/bg.gif')",
           transform: `translateY(${parallaxOffset}px)`,
           transition: 'transform 0.1s cubic-bezier(.4,1.4,.6,1)'
         }}

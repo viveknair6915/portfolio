@@ -1,5 +1,5 @@
 import React from "react";
-import Tilt from "react-tilt";
+import ParallaxTilt from "react-parallax-tilt";
 import { motion } from "framer-motion";
 
 import { styles } from "../styles";
@@ -8,7 +8,7 @@ import { SectionWrapper } from "../hoc";
 import { fadeIn, textVariant } from "../utils/motion";
 
 const ServiceCard = ({ index, title, icon }) => (
-  <Tilt className='xs:w-[250px] w-full'>
+  <ParallaxTilt className='xs:w-[250px] w-full'>
     <motion.div
       variants={fadeIn("right", "spring", index * 0.5, 0.75)}
       className='w-full service-card-animated p-[1px] rounded-[20px] shadow-card'
@@ -32,7 +32,7 @@ const ServiceCard = ({ index, title, icon }) => (
         </h3>
       </div>
     </motion.div>
-  </Tilt>
+  </ParallaxTilt>
 );
 
 const aboutVariants = {
@@ -60,12 +60,14 @@ const About = () => {
       <div className="mt-8 w-full flex flex-col md:flex-row items-center gap-6 md:gap-10 px-2 sm:px-0">
         <div className="flex-shrink-0 w-full md:w-auto flex justify-center mb-4 md:mb-0">
           <iframe
-            src="/resume.pdf"
+            src="/resume.pdf#toolbar=0&navpanes=0&scrollbar=0"
             title="Resume Preview"
             className="rounded-lg shadow-lg border border-gray-700 bg-white"
-            style={{ width: "100%", maxWidth: 180, height: 120 }}
+            style={{ width: "100%", maxWidth: 220, height: 300 }}
             allowFullScreen
-          />
+          >
+            <p className="text-gray-500 text-center mt-4">Your browser does not support PDF preview.</p>
+          </iframe>
         </div>
         <div className="flex flex-col items-center md:items-start w-full md:w-auto">
           <p className="text-secondary text-[15px] sm:text-[16px] mb-2 text-center md:text-left">

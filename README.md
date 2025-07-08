@@ -1,5 +1,99 @@
 <div align="center">
-  <br />
+  <img src="YOUR_BANNER_IMAGE_URL" alt="Aurora 3D Portfolio Banner" style="max-width: 100%; border-radius: 16px;" />
+  <h1>Vivek Nair's 3D Aurora Developer Portfolio</h1>
+  <p>
+    <b>🚀 A visually stunning, interactive portfolio built with React, Three.js, and a custom aurora-inspired design.</b>
+  </p>
+  <p>
+    <a href="YOUR_LIVE_LINK"><img src="https://img.shields.io/badge/Live-Demo-brightgreen?style=for-the-badge" /></a>
+    <a href="mailto:viveknair6915@gmail.com"><img src="https://img.shields.io/badge/Contact-Email-blue?style=for-the-badge" /></a>
+    <a href="https://www.linkedin.com/in/vivek-nair-5073b2251/"><img src="https://img.shields.io/badge/LinkedIn-Connect-blueviolet?style=for-the-badge" /></a>
+  </p>
+</div>
+
+---
+
+## 🌌 About
+
+Hi! I'm **Vivek Nair** — a full-stack developer and ML enthusiast. This portfolio showcases my projects, skills, and passion for building robust web apps and creative 3D experiences.
+
+---
+
+## 🎆 Features
+
+- **Aurora-inspired animated loader** with glowing particles, neon spinner, and animated steps
+- **3D interactive hero section** (React Three Fiber + Three.js)
+- **Animated gradient text** and glassmorphic UI
+- **Responsive design** for all devices
+- **Contact form** with EmailJS integration
+- **Smooth animations** powered by Framer Motion
+- **Accessible** and keyboard-friendly
+
+---
+
+## 🛠️ Tech Stack
+
+- **Frontend:** React, Vite, Tailwind CSS, Framer Motion
+- **3D Graphics:** Three.js, React Three Fiber, Drei
+- **Email:** EmailJS
+- **Deployment:** Vercel
+
+---
+
+## 🚀 Live Demo
+
+👉 [View Portfolio Live](YOUR_LIVE_LINK)
+
+---
+
+## 🏁 Getting Started
+
+Clone and run locally:
+
+```bash
+git clone https://github.com/viveknair6915/project_3D_developer_portfolio.git
+cd project_3D_developer_portfolio
+npm install
+npm run dev
+```
+
+---
+
+## 📁 Folder Structure
+
+- `/src/components` — All React UI components (Hero, Loader, StepLine, etc)
+- `/src/assets` — Images, 3D models, icons
+- `/src/constants` — Data/constants for sections
+- `/src/styles` — Custom styles and Tailwind config
+
+---
+
+## 🖼️ Screenshots
+
+![Aurora Loader](YOUR_SCREENSHOT_URL)
+![3D Hero Section](YOUR_SCREENSHOT_URL_2)
+
+---
+
+## 🙏 Credits & Inspiration
+
+- 3D model assets: [attribution or link]
+- Inspired by [JavaScript Mastery 3D Portfolio Tutorial](https://www.youtube.com/@javascriptmastery/videos)
+- Aurora effect inspired by [CSS Tricks](https://css-tricks.com/) and [Dribbble](https://dribbble.com/)
+
+---
+
+## 📬 Contact
+
+- **Email:** viveknair6915@gmail.com
+- **LinkedIn:** [Vivek Nair](https://www.linkedin.com/in/vivek-nair-5073b2251/)
+
+---
+
+> _“I craft robust web applications by day and train parallelized chess engines by night — always eager to solve real-world challenges with code.”_
+
+---
+
     <a href="https://youtu.be/0fYi8SGA20k?feature=shared" target="_blank">
       <img src="https://github.com/adrianhajdin/project_3D_developer_portfolio/assets/151519281/4722160a-8e61-403f-a905-728feae1f7e6" alt="Project Banner">
     </a>
@@ -828,7 +922,7 @@ module.exports = {
         xs: "450px",
       },
       backgroundImage: {
-        "hero-pattern": "url('/src/assets/herobg.png')",
+        "hero-pattern": "url('/src/assets/bg.gif')",
       },
     },
   },
