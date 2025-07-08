@@ -19,7 +19,7 @@ const Highlights = () => (
     initial="hidden"
     animate="visible"
     exit="exit"
-  className="w-full max-w-4xl mx-auto my-8 xs:my-12 sm:my-16 p-4 xs:p-6 sm:p-8 rounded-2xl sm:rounded-3xl relative overflow-hidden group highlights-morph"
+  className="w-full max-w-4xl mx-auto my-8 xs:my-12 sm:my-16 p-4 xs:p-6 sm:p-8 md:p-10 rounded-2xl sm:rounded-3xl relative overflow-hidden overflow-x-hidden group highlights-morph"
   style={{
     background: 'rgba(34, 36, 58, 0.85)',
     boxShadow: '0 8px 32px 0 rgba(31, 38, 135, 0.37)',
@@ -57,7 +57,7 @@ const Highlights = () => (
       whileInView="visible"
       viewport={{ once: true, amount: 0.6 }}
       variants={highlightVariants}
-      className="space-y-6 text-base sm:text-lg text-gray-200"
+      className="xs:space-y-5 sm:space-y-6 text-base sm:text-lg text-gray-200"
     >
       <li>
         <span className="font-bold text-[#ffb86c]">Achievements:</span> OSDC Codejam V4 Runner-Up (Jan 2024); Hack Genesis’24 Hackathon – Top-10 Finalist (Apr 2024); Solved 500+ problems on Leetcode

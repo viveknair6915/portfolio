@@ -26,13 +26,13 @@ const ProjectCard = ({
           glare: true,
           'max-glare': 0.18
         }}
-        className='bg-tertiary p-5 rounded-2xl w-full min-h-[400px] sm:min-h-[540px] flex flex-col project-tilt'
+        className='bg-tertiary p-5 sm:p-6 rounded-2xl w-full max-w-xs mx-auto min-h-[220px] xs:min-h-[300px] sm:min-h-[400px] sm:min-h-[540px] flex flex-col project-tilt'
       >
         <div className='relative w-full h-[230px]'>
           <img
             src={image}
             alt='project_image'
-            className='w-full h-full object-cover rounded-2xl'
+            className='w-full h-full object-cover rounded-xl'
           />
 
           <div className='absolute inset-0 flex justify-end m-3 card-img_hover'>
@@ -58,7 +58,7 @@ const ProjectCard = ({
           {tags.map((tag) => (
             <p
               key={`${name}-${tag.name}`}
-              className={`text-[14px] ${tag.color}`}
+              className={`text-[13px] sm:text-[14px] ${tag.color}`}
             >
               #{tag.name}
             </p>
@@ -77,7 +77,7 @@ const Works = () => {
         <h2 className={`${styles.sectionHeadText} text-2xl xs:text-3xl sm:text-4xl md:text-5xl`}>Projects.</h2>
       </motion.div>
 
-      <div className='w-full flex'>
+      <div className='w-full'>
         <motion.p
           variants={fadeIn("", "", 0.1, 1)}
           className='mt-3 text-secondary text-[17px] max-w-3xl leading-[30px]'
@@ -90,7 +90,8 @@ const Works = () => {
         </motion.p>
       </div>
 
-      <div className='mt-10 xs:mt-14 sm:mt-20 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-7 items-start w-full max-w-full'>
+      
+      <div className='mt-10 xs:mt-14 sm:mt-20 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-7 items-start w-full max-w-full max-w-6xl mx-auto overflow-x-hidden'>
         {projects.map((project, index) => (
           <ProjectCard key={`project-${index}`} index={index} {...project} />
         ))}

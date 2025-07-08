@@ -1,14 +1,19 @@
 import { BrowserRouter } from "react-router-dom";
 
-import { About, Contact, Experience, Hero, Navbar, Tech, Works, StarsCanvas } from "./components";
-import Highlights from "./components/Highlights";
+import { Hero, Navbar } from "./components";
+import React, { Suspense, useState, useEffect } from "react";
+const About = React.lazy(() => import("./components/About"));
+const Experience = React.lazy(() => import("./components/Experience"));
+const Tech = React.lazy(() => import("./components/Tech"));
+const Works = React.lazy(() => import("./components/Works"));
+const Highlights = React.lazy(() => import("./components/Highlights"));
+const Contact = React.lazy(() => import("./components/Contact"));
+const StarsCanvas = React.lazy(() => import("./components/canvas/Stars"));
+import AuroraSpinner from "./components/AuroraSpinner";
 import Footer from "./components/Footer";
 import ProgressBar from "./components/ProgressBar";
 import ParticlesBackground from "./components/ParticlesBackground";
 import StepLine from "./components/StepLine";
-import AuroraSpinner from "./components/AuroraSpinner";
-
-import React, { useState, useEffect } from "react";
 
 const App = () => {
   const [loading, setLoading] = useState(true);
@@ -81,15 +86,28 @@ const App = () => {
           <Navbar />
           <Hero />
         </div>
-        <About />
-        <Experience />
-        <Tech />
-        <Works />
-        <Highlights />
-
+        <Suspense fallback={<AuroraSpinner />}>
+          <About />
+        </Suspense>
+        <Suspense fallback={<AuroraSpinner />}>
+          <Experience />
+        </Suspense>
+        <Suspense fallback={<AuroraSpinner />}>
+          <Tech />
+        </Suspense>
+        <Suspense fallback={<AuroraSpinner />}>
+          <Works />
+        </Suspense>
+        <Suspense fallback={<AuroraSpinner />}>
+          <Highlights />
+        </Suspense>
         <div className='relative z-0'>
-          <Contact />
-          <StarsCanvas />
+          <Suspense fallback={<AuroraSpinner />}>
+            <Contact />
+          </Suspense>
+          <Suspense fallback={<AuroraSpinner />}>
+            <StarsCanvas />
+          </Suspense>
         </div>
       </div>
       <Footer />

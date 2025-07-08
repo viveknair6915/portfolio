@@ -9,7 +9,7 @@ const auroraPalette = [
   'rgba(255,89,198,0.36)',  // pink
 ];
 
-const ParticlesBackground = ({ numParticles = 12, colorPalette = auroraPalette, particleSize = [1.5, 3], speed = 0.13 }) => {
+const ParticlesBackground = ({ numParticles = 8, colorPalette = auroraPalette, particleSize = [1, 2], speed = 0.09 }) => {
   const canvasRef = useRef(null);
 
   useEffect(() => {
@@ -29,28 +29,30 @@ const ParticlesBackground = ({ numParticles = 12, colorPalette = auroraPalette, 
       color: colorPalette[Math.floor(Math.random() * colorPalette.length)]
     }));
 
-    function draw() {
-      ctx.clearRect(0, 0, width, height);
-      for (let p of particles) {
-        ctx.beginPath();
-        ctx.arc(p.x, p.y, p.r, 0, 2 * Math.PI);
-        ctx.fillStyle = p.color;
-        ctx.shadowColor = p.color;
-        ctx.shadowBlur = 12;
-        ctx.fill();
+    let lastFrame = 0;
+    const targetFPS = 30;
+    function animate(now = 0) {
+      if (now - lastFrame < 1000 / targetFPS) {
+        requestAnimationFrame(animate);
+        return;
       }
-    }
-    function update() {
+      lastFrame = now;
+      ctx.clearRect(0, 0, width, height);
       for (let p of particles) {
         p.x += p.dx;
         p.y += p.dy;
         if (p.x < 0 || p.x > width) p.dx *= -1;
         if (p.y < 0 || p.y > height) p.dy *= -1;
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.r, 0, 2 * Math.PI);
+        ctx.fillStyle = p.color;
+        ctx.globalAlpha = 0.6;
+        ctx.shadowColor = p.color;
+        ctx.shadowBlur = 12;
+        ctx.fill();
+        ctx.globalAlpha = 1;
+        ctx.shadowBlur = 0;
       }
-    }
-    function animate() {
-      draw();
-      update();
       requestAnimationFrame(animate);
     }
     animate();

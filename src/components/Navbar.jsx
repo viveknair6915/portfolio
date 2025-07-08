@@ -62,17 +62,26 @@ const Navbar = () => {
         </ul>
 
         <div className='sm:hidden flex flex-1 justify-end items-center'>
-          <img
-            src={toggle ? close : menu}
-            alt='menu'
-            className='w-[28px] h-[28px] object-contain'
+          <button
+            aria-label={toggle ? 'Close menu' : 'Open menu'}
+            aria-expanded={toggle}
             onClick={() => setToggle(!toggle)}
-          />
+            className="p-2 rounded-full focus:outline-none focus:ring-2 focus:ring-white"
+            tabIndex={0}
+          >
+            <img
+              src={toggle ? close : menu}
+              alt='menu'
+              className='w-[28px] h-[28px] object-contain pointer-events-none'
+            />
+          </button>
 
           <div
             className={`${
               !toggle ? "hidden" : "flex"
-            } p-6 black-gradient absolute top-20 right-0 mx-4 my-2 min-w-[140px] z-10 rounded-xl`}
+            } p-6 black-gradient absolute top-20 right-0 mx-2 my-2 min-w-[180px] w-[70vw] max-w-xs z-10 rounded-xl`}
+            role="menu"
+            aria-label="Mobile navigation menu"
           >
             <ul className='list-none flex justify-end items-start flex-1 flex-col gap-4'>
               {navLinks.map((nav) => (

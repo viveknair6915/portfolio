@@ -19,9 +19,18 @@ const Hero = () => {
   const vivekFull = "Vivek Nair";
 
   useEffect(() => {
+    let lastScroll = 0;
+    let ticking = false;
     const onScroll = () => {
-      setShowScroll(window.scrollY < 10);
-      setParallaxOffset(window.scrollY * 0.12); // Even less intensive parallax for smoothness
+      lastScroll = window.scrollY;
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          setShowScroll(lastScroll < 10);
+          setParallaxOffset(lastScroll * 0.06); // Lower multiplier for less work
+          ticking = false;
+        });
+        ticking = true;
+      }
     };
     window.addEventListener('scroll', onScroll);
     return () => window.removeEventListener('scroll', onScroll);
@@ -30,30 +39,35 @@ const Hero = () => {
   useEffect(() => {
     let i = 0;
     let direction = 1; // 1: typing, -1: erasing
-    const interval = setInterval(() => {
+    let interval;
+    function type() {
       setVivekText(vivekFull.slice(0, i));
       if (direction === 1) {
         if (i < vivekFull.length) {
           i++;
         } else {
           direction = -1;
+          setTimeout(type, 1800); // Pause longer at full name
+          return;
         }
       } else {
         if (i > 0) {
           i--;
         } else {
           direction = 1;
+          setTimeout(type, 1400); // Pause longer at empty
+          return;
         }
       }
-    }, 135);
-    return () => clearInterval(interval);
-    typewriter();
-    return () => clearTimeout(timeoutId);
+      interval = setTimeout(type, 160); // Slower typing/erasing
+    }
+    type();
+    return () => clearTimeout(interval);
   }, []);
 
   return (
     <motion.section
-      className={`relative w-full h-screen flex items-center justify-center overflow-hidden`}
+      className={`relative w-full h-screen xs:min-h-[80vh] flex items-center justify-center overflow-hidden`}
       variants={heroVariants}
       initial="hidden"
       animate="visible"
@@ -73,7 +87,7 @@ const Hero = () => {
       <ParticlesBackground />
       {/* Animated aurora/gradient waves overlay */}
       <div className="absolute inset-0 w-full h-full z-10 pointer-events-none">
-        <svg className="absolute left-0 top-0 w-full h-full" viewBox="0 0 1440 520" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <svg className="absolute left-0 top-0 w-full h-full" viewBox="0 0 1440 520" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
           <defs>
             <linearGradient id="aurora1" x1="0" y1="0" x2="1440" y2="520" gradientUnits="userSpaceOnUse">
               <stop stopColor="#8be9fd"/>
@@ -88,7 +102,7 @@ const Hero = () => {
                       M0,400 Q360,300 720,400 T1440,400 V520 H0Z" />
           </path>
         </svg>
-        <svg className="absolute left-0 top-0 w-full h-full" viewBox="0 0 1440 520" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <svg className="absolute left-0 top-0 w-full h-full" viewBox="0 0 1440 520" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
           <defs>
             <linearGradient id="aurora2" x1="0" y1="0" x2="1440" y2="520" gradientUnits="userSpaceOnUse">
               <stop stopColor="#50fa7b"/>
@@ -108,7 +122,7 @@ const Hero = () => {
       <div className="absolute bottom-0 left-0 w-full h-[40%] z-20 bg-gradient-to-t from-black/80 via-black/30 to-transparent pointer-events-none" />
 
       {/* Centered text over image with animated effects */}
-      <div className="relative z-30 w-full flex flex-col items-center sm:items-start justify-start text-center sm:text-left px-2 xs:px-4 sm:pl-8 md:pl-16 lg:pl-32 h-full pt-14 xs:pt-20 sm:pt-32 md:pt-36 min-h-[320px] max-w-[100vw]">
+      <div className="relative z-30 w-full flex flex-col items-center sm:items-start justify-start text-center sm:text-left px-2 xs:px-4 sm:pl-8 md:pl-16 lg:pl-32 h-full pt-14 xs:pt-20 sm:pt-32 md:pt-36 min-h-[320px] max-w-[100vw] max-w-3xl">
         <motion.h1
           className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold mb-3 sm:mb-4 animate-gradient min-w-[180px] max-w-full"
           style={{textShadow: '0 2px 12px #ff990055, 0 1px 4px #ffb86c77'}}
@@ -146,7 +160,7 @@ const Hero = () => {
 
       {/* Scroll indicator */}
       {typeof window !== 'undefined' && showScroll && (
-        <div className='absolute xs:bottom-10 bottom-32 w-full flex justify-center items-center'>
+        <div className='absolute sm:bottom-10 xs:bottom-16 bottom-28 w-full flex justify-center items-center'>
           <a href='#about'>
             <div className='w-[35px] h-[64px] rounded-3xl border-4 border-secondary flex justify-center items-start p-2 liquid-mouse'>
               <motion.div
